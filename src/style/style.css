@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Lato", serif;
+}
+:root{
+    --primary-color: rgba(187, 55, 104, 1);
+    --secondary-color: rgba(133, 70, 124, 1);
+    --text-color: rgba(255, 255, 255, 1);
+    --text-color-two: rgba(0, 0, 0, 1);
+    --gradient-color: linear-gradient(180deg, #BB3768 0%, #3D5996 100%);
+
+}
+input{
+    outline: none;
+}
+.small_text{
+    font-size: 14px;
+}
+/* --Style for Login-- */
+
+.login_content{
+    height: 100vh;
+}
+.login_content::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../asset/login-banner.png);
+    background-position: center;
+    background-size: cover;
+    width: 60%;
+    height: 100%;
+    background-repeat: no-repeat;
+    left: 0;
+    z-index: -1;
+}
+.login_content .login_form{
+    width: 100%;
+    height: 100vh;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    background-color: var(--text-color);
+}
+.primary_btn{
+    background: var(--gradient-color);
+    color: var(--text-color);
+}
+.login_form form input{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.otp-box{
+    width: 50px;
+}
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+/* Main Context */
+.main_context{
+    min-height: 100vh;
+    background: var(--gradient-color);
+}
+
+/* Sidebar */
+.siderbar{
+    width: 260px;
+}
+.nav_item a{
+    background: rgba(187, 178, 186, 0.06);
+}
+.nav_item .active{
+/* background-color: var(--primary-color); */
+}
+.sub_bar{
+    height: 460px
+}
+@media screen and (min-width: 768px) {
+    .login_content .login_form{
+        width: 600px;
+    }
+}
