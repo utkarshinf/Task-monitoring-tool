@@ -80,6 +80,344 @@ input::-webkit-inner-spin-button{
 .sub_bar{
     height: 460px
 }
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Lato", serif;
+}
+:root{
+    --primary-color: rgba(187, 55, 104, 1);
+    --secondary-color: rgba(133, 70, 124, 1);
+    --text-color: rgba(255, 255, 255, 1);
+    --text-color-two: rgba(0, 0, 0, 1);
+    --gradient-color: linear-gradient(180deg, #BB3768 0%, #3D5996 100%);
+
+}
+input{
+    outline: none;
+}
+.small_text{
+    font-size: 14px;
+}
+/* / --Style for Login-- / */
+
+.login_content{
+    height: 100vh;
+}
+.login_content::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../asset/login-banner.png);
+    background-position: center;
+    background-size: cover;
+    width: 60%;
+    height: 100%;
+    background-repeat: no-repeat;
+    left: 0;
+    z-index: -1;
+}
+.login_content .login_form{
+    width: 100%;
+    height: 100vh;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    background-color: var(--text-color);
+}
+.primary_btn{
+    background: var(--gradient-color);
+    color: var(--text-color);
+}
+.login_form form input{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.otp-box{
+    width: 50px;
+}
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+/* / Main Context / */
+.main_context{
+    min-height: 100vh;
+    background: var(--gradient-color);
+}
+
+/* / Sidebar / */
+.siderbar{
+    width: 260px;
+}
+.nav_item a{
+    background: rgba(187, 178, 186, 0.06);
+}
+
+.sub_bar{
+    height: 460px
+}
+@media screen and (min-width: 768px) {
+    .login_content .login_form{
+        width: 600px;
+    }
+}
+
+.header {
+    background-color: #DEE4F1;
+    box-shadow: #d6d6d6;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header .profile-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+  }
+  .header .welcome-text {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+  
+  .card-list {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .card-item {
+    border: none;
+    padding: 15px 20px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-item:last-child {
+    border-bottom: none;
+  }
+
+.small-img {
+    height: 20px; /* Set the height to your desired size */
+}
+
+
+/* Optional: Adjust the height or other styling */
+.input-group input {
+    height: 40px;
+}
+
+.input-group button {
+    height: 40px;
+}
+
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.schedule-icon {
+  height: 30px;
+}
+
+.date-text {
+  font-size: 14px;
+}
+
+.divider {
+  width: 2px;
+  height: 20px;
+  background-color: rgb(206, 201, 201);
+  margin-right: 10px;
+}
+.custom-search-button {
+    display: flex;
+
+    justify-content: space-between;
+    width: 200px;
+    height: 45px;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .custom-search-button span {
+    font-size: 16px;
+    color: black;
+    flex-grow: 1;
+    text-align: left;
+  }
+  .custom-search-button i {
+    font-size: 18px;
+    color: black;
+  }
+  .rounded-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 175px;
+    height: 40px;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: #E4EBFA;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .rounded-button span {
+    font-size: 16px;
+    color: black;
+    flex-grow: 1;
+    text-align: left;
+  }
+  .rounded-button i {
+    font-size: 18px;
+    color: black;
+  }
+  .custom-card {
+    background-color: #E4EBFA;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .list-group-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .list-group-item:hover {
+    background-color: #eaf4ff;
+  }
+
+  .btn-icon {
+    background-color: transparent;
+    border: none;
+    color: #495057;
+    font-size: 1.2rem;
+  }
+
+  .btn-icon:hover {
+    color: #007bff;
+  }
+
+  .campaign-container {
+    max-width: 400px;
+    height: 640px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    font-family: Arial, sans-serif;
+    position: relative;
+    top: 10%;
+  }
+
+  .campaign-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:#3D5996;
+    margin-bottom: 15px;
+  }
+
+  .campaign-check {
+    margin-bottom: 10px;
+  }
+
+  .campaign-add-btn {
+    font-size: 0.9rem;
+    color: #6b7278;
+    background-color: transparent;
+    border: none;
+  }
+
+  .campaign-add-btn:hover {
+    color: #000;
+  }
+
+  .campaign-dropdown-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 5px;
+    color: #3D5996;
+  }
+
+  .campaign-dropdown-toggle:hover {
+    color: #0056b3;
+  }
+
+  .campaign-check-label {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .campaign-check-label i {
+    margin-left: 5px;
+  }
+
+  .campaign-close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6c757d;
+  }
+
+  .campaign-close-icon:hover {
+    color: #0d6efd;
+  }
+  .save-button {
+    background-color:#3D5996;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 129px;
+    margin-left: 134px;
+  }
+
+  .save-button:hover {
+    background-color: darkblue;
+  }
+
+  .btn-group{
+    outline: none;
+  }
+
+  .campaign{
+    padding-top: 10px;
+
+  }
+
 @media screen and (min-width: 768px) {
     .login_content .login_form{
         width: 600px;
