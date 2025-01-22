@@ -1,32 +1,46 @@
 import React, { useState } from "react";
 import { logo2 } from "../../utils";
-import { Link } from "react-router-dom";
-import { FaEyeSlash } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom"; 
+import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { loginUser } from "../../services/apiService";
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../../redux/authSlice";
 
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const [showPassword, setShowPassword] = useState(false); 
+  const navigate = useNavigate(); 
+  const dispatch = useDispatch(); 
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData)=>({
-        ...prevData,
-        [name]: value,
-    }))
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
       const response = await loginUser(formData);
       console.log("Login Successfull", response);
+      
+      dispatch(loginSuccess());
+      navigate("/admin-dashboard"); 
     } catch (error) {
       console.log("Login failed", error);
     }
   };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState); 
+  };
+
   return (
     <>
       <section className="login_content d-flex justify-content-lg-end align-items-center position-relative">
@@ -50,15 +64,18 @@ const Login = () => {
             </div>
             <div className="mb-2 position-relative w-full">
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 className="border border-black-50 border-2  border-bottom-0 p-2 rounded-2 w-100"
                 name="password"
                 placeholder="Password"
                 value={formData.password}
                 onChange={handleInputChange}
               />
-              <span className="position-absolute end-0 top-50 translate-middle-y me-4 text-black-50 ">
-                <FaEyeSlash />
+              <span
+                className="position-absolute end-0 top-50 translate-middle-y me-4 text-black-50 "
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? <FaEye /> : <FaEyeSlash />} 
               </span>
             </div>
             <div className="mb-4 d-flex justify-content-end">
